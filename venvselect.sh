@@ -1,4 +1,4 @@
-#!/usr/bin/env zsha
+#!/usr/bin/env zsh
 
 PY_VENVS_PATH=$HOME/.virtualenvs
 
