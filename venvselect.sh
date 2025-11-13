@@ -36,4 +36,4 @@ _venvselect_completions() {
 
     compadd "$@" -- "${venvs[@]}"
 }
-compdef _venvselect_completions venvselect
+complete -F _venvselect_completions venvselect
