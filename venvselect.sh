@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 PY_VENVS_PATH=$HOME/.virtualenvs
 
@@ -18,7 +18,7 @@ venvselect() {
     fi
 
     if [ ! -f "$PY_VENVS_PATH/$selected_venv"/bin/activate ]; then
-        printf "No \e[1;34mbin/activate\e[0m in \e[1;34m%s\e[0m\n" "$vevns_path/$selected_venv"
+        printf "No \e[1;34mbin/activate\e[0m in \e[1;34m%s\e[0m\n" "$PY_VENVS_PATH/$selected_venv"
         printf "\e[90mTry to find it by yourself.\e[0m\n"
         return
     fi
@@ -36,4 +36,4 @@ _venvselect_completions() {
 
     compadd "$@" -- "${venvs[@]}"
 }
-complete -F _venvselect_completions venvselect
+compdef _venvselect_completions venvselect
